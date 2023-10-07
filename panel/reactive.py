@@ -1526,6 +1526,8 @@ class ReactiveHTML(Reactive, metaclass=ReactiveHTMLMetaclass):
 
     _extension_name: ClassVar[Optional[str]] = None
 
+    _esm: ClassVar[str] = ""
+
     _template: ClassVar[str] = ""
 
     _scripts: ClassVar[Mapping[str, str | List[str]]] = {}
@@ -1635,6 +1637,7 @@ class ReactiveHTML(Reactive, metaclass=ReactiveHTMLMetaclass):
             'attrs': self._attrs,
             'callbacks': self._node_callbacks,
             'data': self._data_model(**self._process_param_change(data_params)),
+            'esm': textwrap.dedent(self._esm),
             'events': self._get_events(),
             'html': escape(textwrap.dedent(html)),
             'nodes': nodes,
