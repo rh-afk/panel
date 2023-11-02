@@ -209,6 +209,7 @@ class _state(param.Parameterized):
     # Sessions
     _sessions = {}
     _session_key_funcs = {}
+    _cell_outputs = []
 
     # Override user info
     _oauth_user_overrides = {}
