@@ -42,6 +42,7 @@ packages:
   - mesalib
   - numpy<1.24
   - numba::llvmlite
+  - spatialpandas
   - pip:
     - ipyvolume
     - folium
